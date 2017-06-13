@@ -1,0 +1,2 @@
+line 8 deleted (bool debug_needle_print=true;)
+line 19 deleted (#include <cwru_srv/simple_bool_service_message.h>)
