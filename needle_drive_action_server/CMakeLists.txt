@@ -16,6 +16,7 @@ find_package(cwru_davinci_kinematics REQUIRED)
 find_package(Boost REQUIRED COMPONENTS thread system)
 
 
+
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
 ## See http://ros.org/doc/api/catkin/html/user_guide/setup_dot_py.html
@@ -108,6 +109,7 @@ catkin_package(
   DEPENDS system_lib
 )
 
+
 ###########
 ## Build ##
 ###########
@@ -120,10 +122,12 @@ catkin_package(
 include_directories(include
 		    ${EIGEN3_INCLUDE_DIR}
 		    ${catkin_INCLUDES}
-                    ${catkin_INCLUDE_DIRS}
-                    ${Boost_INCLUDE_DIRS}
-                    ${GSTREAMER_INCLUDE_DIRS}
+			${catkin_INCLUDE_DIRS}
+			${Boost_INCLUDE_DIRS}
+            ${GSTREAMER_INCLUDE_DIRS}
 		    ${cwru_davinci_kinematics_SOURCE_DIR}/include)
+
+include_directories("/usr/include/eigen3")
 
 add_definitions(${EIGEN_DEFINITIONS})
 

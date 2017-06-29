@@ -1,0 +1,8 @@
+prefix=/home/william-rn/ros_ws/src/cwru_skill_kits_experimental/needle_drive_action_server/cmake-build-debug/devel
+
+Name: needle_drive_action_server
+Description: Description of needle_drive_action_server
+Version: 0.0.0
+Cflags: -I/home/william-rn/ros_ws/src/cwru_skill_kits_experimental/needle_drive_action_server/include
+Libs: -L/home/william-rn/ros_ws/src/cwru_skill_kits_experimental/needle_drive_action_server/cmake-build-debug/devel/lib -lneedle_drive_lib
+Requires: roscpp rospy std_msgs message_runtime geometry_msgs trajectory_msgs

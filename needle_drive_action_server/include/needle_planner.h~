@@ -9,26 +9,45 @@
 #ifndef NEEDLE_PLANNER_H
 #define	NEEDLE_PLANNER_H
 
-#include <ros/ros.h>
-#include <iostream>
-#include <fstream>
-#include <vector>
-#include <Eigen/Eigen>
-#include <Eigen/Dense>
-#include <string>
-#include <math.h>
-
-#include <tf/transform_listener.h>
-#include <tf/LinearMath/Vector3.h>
-#include <tf/LinearMath/QuadWord.h>
-#include <eigen3/Eigen/src/Geometry/Transform.h>
-#include <cwru_davinci_kinematics/davinci_kinematics.h>
-
 #include <davinci_skill_base.h>
 #include <templates.h>
 
 using namespace std;
 
+class NeedlePlanner {
+
+public:
+	NeedlePlanner();
+	
+	void set_needle_radius(double r) {needle_radius_ = r;}
+	void set_needle_axis_ht (double h) {needle_axis_ht_ = h;}
+	void set_psi_needle_axis_tilt_wrt_tissue(double tilt) {psi_needle_axis_tilt_wrt_tissue_ = tilt;}
+	void set_kvec (Eigen::Vector3d kvec) {kvec_needle_ = kvec;}
+	void set_needle_origin (Eigen::Vector3d O_needle) {O_needle_ = O_needle;}
+	void set_affine_grasp_frame_wrt_gripper_frame(Eigen::Affine3d affine) {affine_grasp_frame_wrt_gripper_frame_ = affine;}
+	void set_affine_needle_frame_wrt_tissue(Eigen::Affine3d affine) {affine_needle_frame_wrt_tissue_ = affine;}
+	void set_grasp_depth(double depth) {grasp_depth_ = depth;}
+
+
+
+
+
+
+protected:
+	
+	// TODO format names
+	double needle_radius_;
+	double needle_axis_ht_;
+	double psi_needle_axis_tilt_wrt_tissue_;
+	Eigen::Vector3d kvec_needle_;
+	Eigen::Vector3d O_needle_;
+	Eigen::Affine3d affine_grasp_frame_wrt_gripper_frame_;
+	Eigen::Affine3d affine_needle_frame_wrt_tissue_;
+	double grasp_depth_;
+	
+	
+
+}; // end of class TODO delete after debug
 
 
 

@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/william-rn/ros_ws/src/cwru_skill_kits_experimental/needle_drive_action_server/cmake-build-debug/devel/setup.sh
